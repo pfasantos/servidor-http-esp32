@@ -18,6 +18,7 @@ Modificações realizadas por Pedro Santos (2025).
 ```   
 Faça o flash no seu dispositivo:
 ```bash
-idf.py -p /dev/ttyUSB0 flash monitor
+idf.py -p PORT flash monitor
 ```
+Substituindo PORT pela porta que seu ESP32 está conectado
 Conecte-se à rede Wi-Fi configurada e acesse a URL adicionada no navegador para visualizar o botão.
