@@ -130,11 +130,28 @@ static const httpd_uri_t hello = {
     .user_ctx  = "Hello World!"
 };
 
+/*HTML page content*/
+static const char* HTML_PAGINA =
+"<!DOCTYPE html>"
+"<html>"
+"  <head>"
+"    <meta charset=\"UTF-8\">"
+"    <title>Teste</title>"
+"  </head>"
+"</html>";
+
+/* An HTML page handler*/
+static esp_err_t html_page_handler(httpd_req_t *req) {
+    httpd_resp_set_type(req, "text/html");
+    httpd_resp_send(req, HTML_PAGINA, HTTPD_RESP_USE_STRLEN);
+    return ESP_OK;
+}
+
 /* A button that changes color every time its clicked*/
-static const httpd_uri_t button = {
-    .uri       = "/button",
+static const httpd_uri_t botao = {
+    .uri       = "/botao",
     .method    = HTTP_GET,
-    .handler   = hello_get_handler,
+    .handler   = html_page_handler,
     .user_ctx  = NULL
 };
 
