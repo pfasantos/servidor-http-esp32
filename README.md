@@ -21,4 +21,4 @@ Faça o flash no seu dispositivo:
 idf.py -p PORT flash monitor
 ```
 Substituindo PORT pela porta que seu ESP32 está conectado
-Conecte-se à rede Wi-Fi configurada e acesse a URL adicionada no navegador para visualizar o botão.
+Conecte-se à rede Wi-Fi configurada e acesse a URL `http://<ip>/botao` (substituindo o IP do seu ESP) no navegador para visualizar o botão.
