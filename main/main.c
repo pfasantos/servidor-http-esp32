@@ -262,6 +262,14 @@ static const httpd_uri_t hello = {
     .user_ctx  = "Hello World!"
 };
 
+/* A button that changes color every time its clicked*/
+static const httpd_uri_t button = {
+    .uri       = "/button",
+    .method    = HTTP_GET,
+    .handler   = hello_get_handler,
+    .user_ctx  = NULL
+};
+
 /* An HTTP POST handler */
 static esp_err_t echo_post_handler(httpd_req_t *req)
 {
@@ -449,6 +457,7 @@ static httpd_handle_t start_webserver(void)
         httpd_register_uri_handler(server, &echo);
         httpd_register_uri_handler(server, &ctrl);
         httpd_register_uri_handler(server, &any);
+        httpd_register_uri_handler(server, &botao);
 #if CONFIG_EXAMPLE_ENABLE_SSE_HANDLER
         httpd_register_uri_handler(server, &sse); // Register SSE handler
 #endif
